@@ -4,24 +4,24 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import br.com.sempreufg.model.Egresso;
+import br.com.sempreufg.model.HistoricoUFG;
 
 public class HistoricoUFGDAO {
 
 	private Connection connection;
 	
-	public void insert(Egresso egresso) throws SQLException {
+	public void insert(HistoricoUFG historico) throws SQLException {
 
-		String sql = "insert into egresso " + "(nome,tipodoc,numdoc,datanasc)" + " values (?,?,?,?)";
+		String sql = "insert into historicoufg " + "(dataIngresso,dataConclusao,matricula,titulo)" + " values (?,?,?,?)";
 
 		try {
 
 			PreparedStatement stmt = getConnection().prepareStatement(sql);
 
-			stmt.setString(1, egresso.getNome());
-			stmt.setString(2, egresso.getTipodoc());
-			stmt.setString(3, egresso.getNumdoc());
-			stmt.setString(4, egresso.getDatanasc());
+			stmt.setString(1, historico.getDataIngresso());
+			stmt.setString(2, historico.getDataConclusao());
+			stmt.setString(3, historico.getMatricula());
+			stmt.setString(4, historico.getTitulo());
 			
 			stmt.executeUpdate();
 			stmt.close();
