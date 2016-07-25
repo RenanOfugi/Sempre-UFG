@@ -3,6 +3,7 @@ package br.com.sempreufg.controller.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import br.com.sempreufg.model.HistoricoUFG;
 
@@ -31,6 +32,14 @@ public class HistoricoUFGDAO {
 		} finally {
 			getConnection().close();
 		}
+	}
+	
+	public void valoresNoObjeto(HistoricoUFG historico, ArrayList<String> entradas){
+		
+		historico.setDataIngresso(entradas.get(6));
+		historico.setDataConclusao(entradas.get(7));
+		historico.setMatricula(entradas.get(8));
+		historico.setTitulo(entradas.get(9));
 	}
 
 	public Connection getConnection() {

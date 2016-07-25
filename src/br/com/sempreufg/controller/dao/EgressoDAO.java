@@ -3,7 +3,6 @@ package br.com.sempreufg.controller.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
 import br.com.sempreufg.connection.ConnectionFactory;
 import br.com.sempreufg.model.Egresso;
 
@@ -37,6 +36,7 @@ public class EgressoDAO {
 			getConnection().close();
 		}
 	}
+	
 
 	public Connection getConnection() {
 		return connection;

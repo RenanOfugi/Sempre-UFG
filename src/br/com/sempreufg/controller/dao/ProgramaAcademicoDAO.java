@@ -3,6 +3,7 @@ package br.com.sempreufg.controller.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import br.com.sempreufg.connection.ConnectionFactory;
 import br.com.sempreufg.model.ProgramaAcademico;
@@ -36,6 +37,14 @@ public class ProgramaAcademicoDAO {
 		} finally {
 			getConnection().close();
 		}
+	}
+	
+	public void valoresNoObjeto(ProgramaAcademico academico, ArrayList<String> entradas){
+		
+		academico.setTipo(entradas.get(4));
+		academico.setDatainicio(entradas.get(5));
+		academico.setDatafim(entradas.get(6));
+		academico.setDescricao(entradas.get(7));
 	}
 
 	public Connection getConnection() {

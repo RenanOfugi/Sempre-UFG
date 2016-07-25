@@ -6,6 +6,11 @@ public class Egresso {
 	private String tipodoc;
 	private String numdoc;
 	private String datanasc;
+	private static int qnt = 0;
+	
+	public void add(){
+		qnt = getQnt() + 1;
+	}
 
 	public String getNome() {
 		return nome;
@@ -38,4 +43,9 @@ public class Egresso {
 	public void setDatanasc(String datanasc) {
 		this.datanasc = datanasc;
 	}
+
+	public static int getQnt() {
+		return qnt;
+	}
+
 }

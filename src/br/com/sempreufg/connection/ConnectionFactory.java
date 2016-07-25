@@ -9,16 +9,16 @@ public class ConnectionFactory {
 	private String url;
 	private String user;
 	private String password;
-	
+
 	public ConnectionFactory() {
-		
+
 		setUrl("jdbc:postgresql://localhost/sempreufg");
 		setUser("postgres");
 		setPassword("tomodaty23");
 	}
-	
-	public Connection getConnection(){
-		
+
+	public Connection getConnection() {
+
 		try {
 			return DriverManager.getConnection(getUrl(), getUser(), getPassword());
 		} catch (SQLException e) {
